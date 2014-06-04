@@ -7,41 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B0601E8193E70CB00A3B1B2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0601E7193E70CB00A3B1B2 /* main.swift */; };
-		4B0601EF193E70F500A3B1B2 /* NSURL_Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0601EE193E70F500A3B1B2 /* NSURL_Networking.swift */; };
 		4B2E3D4E193E90720051AAF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E3D4D193E90720051AAF2 /* AppDelegate.swift */; };
 		4B2E3D50193E90720051AAF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E3D4F193E90720051AAF2 /* ViewController.swift */; };
 		4B2E3D53193E90720051AAF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E3D51193E90720051AAF2 /* Main.storyboard */; };
 		4B2E3D55193E90720051AAF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E3D54193E90720051AAF2 /* Images.xcassets */; };
-		4B2E3D61193E90720051AAF2 /* SwiftRedditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E3D60193E90720051AAF2 /* SwiftRedditTests.swift */; };
 		4B2E3D68193E907D0051AAF2 /* NSURL_Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0601EE193E70F500A3B1B2 /* NSURL_Networking.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4B2E3D5B193E90720051AAF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4B0601DC193E70CB00A3B1B2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4B2E3D48193E90710051AAF2;
-			remoteInfo = SwiftReddit;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		4B0601E2193E70CB00A3B1B2 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		4B0601E4193E70CB00A3B1B2 /* swiftTools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swiftTools; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B0601E7193E70CB00A3B1B2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4B0601EE193E70F500A3B1B2 /* NSURL_Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURL_Networking.swift; sourceTree = "<group>"; };
 		4B2E3D49193E90710051AAF2 /* SwiftReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2E3D4C193E90720051AAF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,27 +22,11 @@
 		4B2E3D4F193E90720051AAF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B2E3D52193E90720051AAF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B2E3D54193E90720051AAF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4B2E3D5A193E90720051AAF2 /* SwiftRedditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRedditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B2E3D5F193E90720051AAF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B2E3D60193E90720051AAF2 /* SwiftRedditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRedditTests.swift; sourceTree = "<group>"; };
+		4BE748D5193F088F007E97EE /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4B0601E1193E70CB00A3B1B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4B2E3D46193E90710051AAF2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4B2E3D57193E90720051AAF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,9 +39,9 @@
 		4B0601DB193E70CB00A3B1B2 = {
 			isa = PBXGroup;
 			children = (
-				4B0601E6193E70CB00A3B1B2 /* swiftTools */,
+				4BE748D5193F088F007E97EE /* Playground.playground */,
+				4B0601E6193E70CB00A3B1B2 /* SwiftTools */,
 				4B2E3D4A193E90720051AAF2 /* SwiftReddit */,
-				4B2E3D5D193E90720051AAF2 /* SwiftRedditTests */,
 				4B0601E5193E70CB00A3B1B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,19 +49,17 @@
 		4B0601E5193E70CB00A3B1B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B0601E4193E70CB00A3B1B2 /* swiftTools */,
 				4B2E3D49193E90710051AAF2 /* SwiftReddit.app */,
-				4B2E3D5A193E90720051AAF2 /* SwiftRedditTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4B0601E6193E70CB00A3B1B2 /* swiftTools */ = {
+		4B0601E6193E70CB00A3B1B2 /* SwiftTools */ = {
 			isa = PBXGroup;
 			children = (
-				4B0601E7193E70CB00A3B1B2 /* main.swift */,
 				4B0601EE193E70F500A3B1B2 /* NSURL_Networking.swift */,
 			);
+			name = SwiftTools;
 			path = swiftTools;
 			sourceTree = "<group>";
 		};
@@ -128,43 +83,9 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4B2E3D5D193E90720051AAF2 /* SwiftRedditTests */ = {
-			isa = PBXGroup;
-			children = (
-				4B2E3D60193E90720051AAF2 /* SwiftRedditTests.swift */,
-				4B2E3D5E193E90720051AAF2 /* Supporting Files */,
-			);
-			path = SwiftRedditTests;
-			sourceTree = "<group>";
-		};
-		4B2E3D5E193E90720051AAF2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4B2E3D5F193E90720051AAF2 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B0601E3193E70CB00A3B1B2 /* swiftTools */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4B0601EB193E70CB00A3B1B2 /* Build configuration list for PBXNativeTarget "swiftTools" */;
-			buildPhases = (
-				4B0601E0193E70CB00A3B1B2 /* Sources */,
-				4B0601E1193E70CB00A3B1B2 /* Frameworks */,
-				4B0601E2193E70CB00A3B1B2 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = swiftTools;
-			productName = swiftTools;
-			productReference = 4B0601E4193E70CB00A3B1B2 /* swiftTools */;
-			productType = "com.apple.product-type.tool";
-		};
 		4B2E3D48193E90710051AAF2 /* SwiftReddit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B2E3D66193E90720051AAF2 /* Build configuration list for PBXNativeTarget "SwiftReddit" */;
@@ -182,24 +103,6 @@
 			productReference = 4B2E3D49193E90710051AAF2 /* SwiftReddit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4B2E3D59193E90720051AAF2 /* SwiftRedditTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4B2E3D67193E90720051AAF2 /* Build configuration list for PBXNativeTarget "SwiftRedditTests" */;
-			buildPhases = (
-				4B2E3D56193E90720051AAF2 /* Sources */,
-				4B2E3D57193E90720051AAF2 /* Frameworks */,
-				4B2E3D58193E90720051AAF2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4B2E3D5C193E90720051AAF2 /* PBXTargetDependency */,
-			);
-			name = SwiftRedditTests;
-			productName = SwiftRedditTests;
-			productReference = 4B2E3D5A193E90720051AAF2 /* SwiftRedditTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -209,19 +112,12 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Zachry Thayer";
 				TargetAttributes = {
-					4B0601E3193E70CB00A3B1B2 = {
-						CreatedOnToolsVersion = 6.0;
-					};
 					4B2E3D48193E90710051AAF2 = {
 						CreatedOnToolsVersion = 6.0;
 					};
-					4B2E3D59193E90720051AAF2 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 4B2E3D48193E90710051AAF2;
-					};
 				};
 			};
-			buildConfigurationList = 4B0601DF193E70CB00A3B1B2 /* Build configuration list for PBXProject "swiftTools" */;
+			buildConfigurationList = 4B0601DF193E70CB00A3B1B2 /* Build configuration list for PBXProject "SwiftTools" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -234,9 +130,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B0601E3193E70CB00A3B1B2 /* swiftTools */,
 				4B2E3D48193E90710051AAF2 /* SwiftReddit */,
-				4B2E3D59193E90720051AAF2 /* SwiftRedditTests */,
 			);
 		};
 /* End PBXProject section */
@@ -251,25 +145,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B2E3D58193E90720051AAF2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4B0601E0193E70CB00A3B1B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4B0601EF193E70F500A3B1B2 /* NSURL_Networking.swift in Sources */,
-				4B0601E8193E70CB00A3B1B2 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4B2E3D45193E90710051AAF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,23 +158,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B2E3D56193E90720051AAF2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4B2E3D61193E90720051AAF2 /* SwiftRedditTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4B2E3D5C193E90720051AAF2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4B2E3D48193E90710051AAF2 /* SwiftReddit */;
-			targetProxy = 4B2E3D5B193E90720051AAF2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4B2E3D51193E90720051AAF2 /* Main.storyboard */ = {
@@ -385,20 +247,6 @@
 			};
 			name = Release;
 		};
-		4B0601EC193E70CB00A3B1B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		4B0601ED193E70CB00A3B1B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		4B2E3D62193E90720051AAF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -436,64 +284,14 @@
 			};
 			name = Release;
 		};
-		4B2E3D64193E90720051AAF2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SwiftReddit.app/SwiftReddit";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SwiftRedditTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		4B2E3D65193E90720051AAF2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SwiftReddit.app/SwiftReddit";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SwiftRedditTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B0601DF193E70CB00A3B1B2 /* Build configuration list for PBXProject "swiftTools" */ = {
+		4B0601DF193E70CB00A3B1B2 /* Build configuration list for PBXProject "SwiftTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B0601E9193E70CB00A3B1B2 /* Debug */,
 				4B0601EA193E70CB00A3B1B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4B0601EB193E70CB00A3B1B2 /* Build configuration list for PBXNativeTarget "swiftTools" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4B0601EC193E70CB00A3B1B2 /* Debug */,
-				4B0601ED193E70CB00A3B1B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -505,14 +303,7 @@
 				4B2E3D63193E90720051AAF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		4B2E3D67193E90720051AAF2 /* Build configuration list for PBXNativeTarget "SwiftRedditTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4B2E3D64193E90720051AAF2 /* Debug */,
-				4B2E3D65193E90720051AAF2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "4B2E3D48193E90710051AAF2"
                BuildableName = "SwiftReddit.app"
                BlueprintName = "SwiftReddit"
-               ReferencedContainer = "container:swiftTools.xcodeproj">
+               ReferencedContainer = "container:SwiftTools.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "4B2E3D59193E90720051AAF2"
                BuildableName = "SwiftRedditTests.xctest"
                BlueprintName = "SwiftRedditTests"
-               ReferencedContainer = "container:swiftTools.xcodeproj">
+               ReferencedContainer = "container:SwiftTools.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "4B2E3D48193E90710051AAF2"
             BuildableName = "SwiftReddit.app"
             BlueprintName = "SwiftReddit"
-            ReferencedContainer = "container:swiftTools.xcodeproj">
+            ReferencedContainer = "container:SwiftTools.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "4B2E3D48193E90710051AAF2"
             BuildableName = "SwiftReddit.app"
             BlueprintName = "SwiftReddit"
-            ReferencedContainer = "container:swiftTools.xcodeproj">
+            ReferencedContainer = "container:SwiftTools.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "4B2E3D48193E90710051AAF2"
             BuildableName = "SwiftReddit.app"
             BlueprintName = "SwiftReddit"
-            ReferencedContainer = "container:swiftTools.xcodeproj">
+            ReferencedContainer = "container:SwiftTools.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

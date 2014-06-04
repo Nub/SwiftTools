@@ -8,26 +8,77 @@
 
 import Foundation
 
+#if os(iOS)
+	import UIKit
+#elseif os(OSX)
+	import AppKit
+#endif
+
 extension NSURL {
+	
+	//MARK: Networking
 	struct Networking {
+		
 		static let operationQueue = NSOperationQueue.mainQueue()
-		static let mimeHTTPHeaderField = "Content-Type"
+		
+		enum REST: String {
+			case GET		= "GET"
+			case POST		= "POST"
+			case PUT		= "PUT"
+			case DELETE = "DELETE"
+		}
+		
+		enum ErrorCode: Int {
+			case ImageProcessingFailure = -1
+			case JsonProcessingFailure = -2
+		}
+		
+		static let ErrorDomain = "NSURL_Networking"
+		static let ResponseKey = "response"
+				
+		#if os(iOS)
+		static let imageType = UIImage.self
+		#elseif os(OSX)
+		static let imageType = NSImage.self
+		#endif
 	}
+	
+	typealias StringDict = Dictionary<String,String>
 	
 	func request() -> NSMutableURLRequest {
 		let request = NSMutableURLRequest(URL: self)
 		return request
 	}
 	
-	func fetch(method: String, body: (NSString, NSData)!, completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
+	func GET(body: (NSData, StringDict!)?=nil, completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
+		fetch(Networking.REST.GET, body: body, completion: completion)
+	}
+	
+	func POST(body: (NSData, StringDict!), completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
+		fetch(Networking.REST.POST, body: body, completion: completion)
+	}
+	
+	func PUT(body: (NSData, StringDict!), completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
+		fetch(Networking.REST.PUT, body: body, completion: completion)
+	}
+	
+	func DELETE(body: (NSData, StringDict!)?=nil, completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
+		fetch(Networking.REST.DELETE, body: body, completion: completion)
+	}
+	
+	func fetch(method: Networking.REST, body: (NSData, StringDict!)!, completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
 		let request = self.request()
-		request.HTTPMethod = method
+		request.HTTPMethod = method.toRaw()
 		
 		if body != nil {
-			let mime = body.0
-			let data = body.1
-			request.setValue(mime, forHTTPHeaderField: Networking.mimeHTTPHeaderField)
+			let data = body.0
+			let headerFieldValues = body.1
 			request.HTTPBody = data;
+			
+			for key: String in headerFieldValues.keys {
+				let value = headerFieldValues[key]
+				request.setValue(value, forHTTPHeaderField: key)
+			}
 		}
 		
 		NSURLConnection.sendAsynchronousRequest(request, queue: Networking.operationQueue){(response: NSURLResponse!, data: NSData!, error: NSError!) in
@@ -40,8 +91,38 @@ extension NSURL {
 		}
 	}
 	
+	func processResponse(response: NSHTTPURLResponse, data: NSData) -> AnyObject {
+		let mime: String = response.MIMEType
+		var responseData: AnyObject!
+		var error: NSErrorPointer! = UnsafePointer<NSError?>()
+
+		switch mime {
+		case "application/json":
+			responseData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: error)
+		case let image where image.hasPrefix("image"):
+			responseData = Networking.imageType(data: data as NSData)
+			if response == nil {
+				let userInfo = NSDictionary(object: response, forKey: Networking.ResponseKey)
+				error.memory = NSError(domain: Networking.ErrorDomain, code: Networking.ErrorCode.ImageProcessingFailure.toRaw(), userInfo: userInfo)
+			}
+		default:
+			responseData = data
+		}
+		
+		if error != nil {
+			println("Response:\(response)\nError:\(error)")
+			responseData = nil
+		}
+		
+		return response
+	}
+	
 	//MARK: URL Building
 	
+	/**
+	* Builds urls based off of a template and a set of values
+	* @arg template - URL template format: Keys are defined as {key}, where key is a value from a dictionary
+	**/
 	class func URLWithTemplate(template: String, values: Dictionary<String,String>) -> NSURL {
 		var urlString = template
 		for key: String in values.keys {
@@ -52,6 +133,16 @@ extension NSURL {
 		
 		return NSURL.URLWithString(urlString)
 	}
+	
+	/**
+	* Converts a dictionary into a GET query and appends it to a URL
+	**/
+	func URLByAppendingQuery(query: Dictionary<String, AnyObject>) -> NSURL {
+		let queryString = NSURL.queryStringFromDictionary(query, baseName:nil)
+		return NSURL(string: queryString)
+	}
+	
+	//MARK: Private URL Building
 	
 	class func queryStringFromDictionary(dictionary: Dictionary<String, AnyObject>, baseName: String!) -> String {
 		let escapedBasename = NSURL.escapeQueryString(baseName)
@@ -114,13 +205,7 @@ extension NSURL {
 		return queryString.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)
 	}
 	
-	func URLByAppendingQuery(query: Dictionary<String, AnyObject>) -> NSURL {
-		let queryString = NSURL.queryStringFromDictionary(query, baseName:nil)
-		return NSURL(string: queryString)
-	}
-
 }
-
 
 //MARK: Operator overloading
 

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4B0601E3193E70CB00A3B1B2"
-               BuildableName = "swiftTools"
-               BlueprintName = "swiftTools"
-               ReferencedContainer = "container:swiftTools.xcodeproj">
+               BuildableName = "SwiftTools.temp_caseinsensitive_rename"
+               BlueprintName = "SwiftTools.temp_caseinsensitive_rename"
+               ReferencedContainer = "container:SwiftTools.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B0601E3193E70CB00A3B1B2"
-            BuildableName = "swiftTools"
-            BlueprintName = "swiftTools"
-            ReferencedContainer = "container:swiftTools.xcodeproj">
+            BuildableName = "SwiftTools.temp_caseinsensitive_rename"
+            BlueprintName = "SwiftTools.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:SwiftTools.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B0601E3193E70CB00A3B1B2"
-            BuildableName = "swiftTools"
-            BlueprintName = "swiftTools"
-            ReferencedContainer = "container:swiftTools.xcodeproj">
+            BuildableName = "SwiftTools.temp_caseinsensitive_rename"
+            BlueprintName = "SwiftTools.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:SwiftTools.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B0601E3193E70CB00A3B1B2"
-            BuildableName = "swiftTools"
-            BlueprintName = "swiftTools"
-            ReferencedContainer = "container:swiftTools.xcodeproj">
+            BuildableName = "SwiftTools.temp_caseinsensitive_rename"
+            BlueprintName = "SwiftTools.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:SwiftTools.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

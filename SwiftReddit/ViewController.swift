@@ -12,15 +12,15 @@ class ViewController: UIViewController {
                             
 	@IBOutlet var textView : UITextView
 	
-	override func viewDidLoad() {
+	override func viewDidLoad(){
 		super.viewDidLoad()
 		loadData()
 	}
 
 	
-	func loadData() {
+	func loadData(){
 		let redditURL = NSURL.URLWithTemplate("http://reddit.com/r/{subreddit}", values: ["subreddit":"motocross"])
-		redditURL.fetch("GET", body: nil){ (response: NSHTTPURLResponse, data: AnyObject) in
+		redditURL.GET(completion: { (response: NSHTTPURLResponse, data: AnyObject) in
 			if data.isKindOfClass(NSError){
 				self.textView.text = "Error:\(data.description)"
 			} else {
@@ -28,7 +28,9 @@ class ViewController: UIViewController {
 				let text = NSString(data: responseData, encoding: NSUTF8StringEncoding)
 				self.textView.text = text
 			}
-		}
+		})
 	}
+	
+	
 }
 
