@@ -12,6 +12,7 @@
 		4B2E3D53193E90720051AAF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E3D51193E90720051AAF2 /* Main.storyboard */; };
 		4B2E3D55193E90720051AAF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E3D54193E90720051AAF2 /* Images.xcassets */; };
 		4B2E3D68193E907D0051AAF2 /* NSURL_Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0601EE193E70F500A3B1B2 /* NSURL_Networking.swift */; };
+		4BD05D831941364D00B4216D /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD05D821941364D00B4216D /* Signal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4B2E3D4F193E90720051AAF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B2E3D52193E90720051AAF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B2E3D54193E90720051AAF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4BD05D821941364D00B4216D /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		4BE748D5193F088F007E97EE /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +59,7 @@
 		4B0601E6193E70CB00A3B1B2 /* SwiftTools */ = {
 			isa = PBXGroup;
 			children = (
+				4BD05D821941364D00B4216D /* Signal.swift */,
 				4B0601EE193E70F500A3B1B2 /* NSURL_Networking.swift */,
 			);
 			name = SwiftTools;
@@ -117,7 +120,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4B0601DF193E70CB00A3B1B2 /* Build configuration list for PBXProject "SwiftTools" */;
+			buildConfigurationList = 4B0601DF193E70CB00A3B1B2 /* Build configuration list for PBXProject "swiftTools" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD05D831941364D00B4216D /* Signal.swift in Sources */,
 				4B2E3D68193E907D0051AAF2 /* NSURL_Networking.swift in Sources */,
 				4B2E3D50193E90720051AAF2 /* ViewController.swift in Sources */,
 				4B2E3D4E193E90720051AAF2 /* AppDelegate.swift in Sources */,
@@ -252,6 +256,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -263,6 +268,7 @@
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -272,6 +278,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SwiftReddit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -287,7 +294,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B0601DF193E70CB00A3B1B2 /* Build configuration list for PBXProject "SwiftTools" */ = {
+		4B0601DF193E70CB00A3B1B2 /* Build configuration list for PBXProject "swiftTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B0601E9193E70CB00A3B1B2 /* Debug */,

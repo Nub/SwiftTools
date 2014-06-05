@@ -19,16 +19,16 @@ class ViewController: UIViewController {
 
 	
 	func loadData(){
-		let redditURL = NSURL.URLWithTemplate("http://reddit.com/r/{subreddit}", values: ["subreddit":"motocross"])
-		redditURL.GET(completion: { (response: NSHTTPURLResponse, data: AnyObject) in
-			if data.isKindOfClass(NSError){
-				self.textView.text = "Error:\(data.description)"
-			} else {
-				let responseData = data as NSData
-				let text = NSString(data: responseData, encoding: NSUTF8StringEncoding)
-				self.textView.text = text
-			}
-		})
+//		let redditURL = NSURL.URLWithTemplate("http://reddit.com/r/{subreddit}", values: ["subreddit":"motocross"])
+//		redditURL.GET(){ (response: NSHTTPURLResponse, data: AnyObject) in
+//			if data.isKindOfClass(NSError){
+//				self.textView.text = "Error:\(data.description)"
+//			} else {
+//				let responseData = data as NSData
+//				let text = NSString(data: responseData, encoding: NSUTF8StringEncoding)
+//				self.textView.text = text
+//			}
+//		}
 	}
 	
 	

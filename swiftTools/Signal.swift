@@ -1,3 +1,11 @@
+//
+//  Signal.swift
+//  swiftTools
+//
+//  Created by Zachry Thayer on 6/5/14.
+//  Copyright (c) 2014 Zachry Thayer. All rights reserved.
+//
+
 import Foundation
 
 class Signal {
@@ -31,29 +39,3 @@ class Signal {
 		return newSignal
 	}
 }
-
-//Mark: Test
-
-let signal = Signal(){(object: AnyObject) -> AnyObject in
-	let newObject = object as String + "A"
-	println(newObject)
-	return newObject
-}
-
-signal.subscribeNext(){(object: AnyObject) -> AnyObject in
-	let newObject = object as String + "B"
-	println(newObject)
-	return newObject
-}.subscribeNext(){(object: AnyObject) -> AnyObject in
-	let newObject = object as String + "2"
-	println(newObject)
-	return newObject
-}
-
-signal.subscribeNext(){(object: AnyObject) -> AnyObject in
-	let newObject = object as String + "C"
-	println(newObject)
-	return newObject
-}
-
-signal.sendNext("1")

@@ -15,7 +15,6 @@ import Foundation
 #endif
 
 extension NSURL {
-	
 	//MARK: Networking
 	struct Networking {
 		
@@ -25,15 +24,15 @@ extension NSURL {
 			case GET		= "GET"
 			case POST		= "POST"
 			case PUT		= "PUT"
-			case DELETE = "DELETE"
+			case DELETE		= "DELETE"
 		}
 		
-		enum ErrorCode: Int {
+		static let ErrorDomain = "NSURL_Networking"
+		enum Error: Int {
 			case ImageProcessingFailure = -1
 			case JsonProcessingFailure = -2
 		}
 		
-		static let ErrorDomain = "NSURL_Networking"
 		static let ResponseKey = "response"
 				
 		#if os(iOS)
@@ -41,32 +40,42 @@ extension NSURL {
 		#elseif os(OSX)
 		static let imageType = NSImage.self
 		#endif
+		
+		typealias HTTPHeaders = Dictionary<String,String>
+		typealias HTTPBody = (NSData, Networking.HTTPHeaders)
+		typealias Completion = ((NSHTTPURLResponse, AnyObject) -> Void)
 	}
-	
-	typealias StringDict = Dictionary<String,String>
 	
 	func request() -> NSMutableURLRequest {
 		let request = NSMutableURLRequest(URL: self)
 		return request
 	}
 	
-	func GET(body: (NSData, StringDict!)?=nil, completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
+	func GET(body: Networking.HTTPBody, completion: Networking.Completion) {
 		fetch(Networking.REST.GET, body: body, completion: completion)
 	}
 	
-	func POST(body: (NSData, StringDict!), completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
+	func GET(completion: Networking.Completion) {
+		fetch(Networking.REST.GET, body: nil, completion: completion)
+	}
+
+	func POST(body: Networking.HTTPBody, completion: Networking.Completion) {
 		fetch(Networking.REST.POST, body: body, completion: completion)
 	}
 	
-	func PUT(body: (NSData, StringDict!), completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
+	func PUT(body: Networking.HTTPBody, completion: Networking.Completion) {
 		fetch(Networking.REST.PUT, body: body, completion: completion)
 	}
 	
-	func DELETE(body: (NSData, StringDict!)?=nil, completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
+	func DELETE(body: Networking.HTTPBody, completion: Networking.Completion) {
 		fetch(Networking.REST.DELETE, body: body, completion: completion)
 	}
 	
-	func fetch(method: Networking.REST, body: (NSData, StringDict!)!, completion: ((NSHTTPURLResponse, AnyObject) -> Void)) {
+	func DELETE(completion: Networking.Completion) {
+		fetch(Networking.REST.DELETE, body: nil, completion: completion)
+	}
+	
+	func fetch(method: Networking.REST, body: Networking.HTTPBody!, completion: Networking.Completion) {
 		let request = self.request()
 		request.HTTPMethod = method.toRaw()
 		
@@ -94,16 +103,16 @@ extension NSURL {
 	func processResponse(response: NSHTTPURLResponse, data: NSData) -> AnyObject {
 		let mime: String = response.MIMEType
 		var responseData: AnyObject!
-		var error: NSErrorPointer! = UnsafePointer<NSError?>()
+		var error: NSError?
 
 		switch mime {
 		case "application/json":
-			responseData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: error)
+			responseData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error)
 		case let image where image.hasPrefix("image"):
 			responseData = Networking.imageType(data: data as NSData)
 			if response == nil {
 				let userInfo = NSDictionary(object: response, forKey: Networking.ResponseKey)
-				error.memory = NSError(domain: Networking.ErrorDomain, code: Networking.ErrorCode.ImageProcessingFailure.toRaw(), userInfo: userInfo)
+				error = NSError(domain: Networking.ErrorDomain, code: Networking.Error.ImageProcessingFailure.toRaw(), userInfo: userInfo)
 			}
 		default:
 			responseData = data
@@ -121,7 +130,8 @@ extension NSURL {
 	
 	/**
 	* Builds urls based off of a template and a set of values
-	* @arg template - URL template format: Keys are defined as {key}, where key is a value from a dictionary
+	* @param template - URL template format: Keys are defined as {key}, where key is a value from a dictionary
+	* @param values - A dictionary of values to be injected into the template
 	**/
 	class func URLWithTemplate(template: String, values: Dictionary<String,String>) -> NSURL {
 		var urlString = template
@@ -136,6 +146,7 @@ extension NSURL {
 	
 	/**
 	* Converts a dictionary into a GET query and appends it to a URL
+	* @param quert - A dictionary of query parameters
 	**/
 	func URLByAppendingQuery(query: Dictionary<String, AnyObject>) -> NSURL {
 		let queryString = NSURL.queryStringFromDictionary(query, baseName:nil)
