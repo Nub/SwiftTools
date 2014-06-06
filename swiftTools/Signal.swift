@@ -10,9 +10,12 @@ import Foundation
 
 class Signal {
 	typealias SignalClosure = (AnyObject -> AnyObject)
+	typealias BoolClosure = (AnyObject -> Bool)
+	
 	
 	var subscribers = Signal[]()
 	var closure: SignalClosure!
+	var filterClosure: BoolClosure = {(object: AnyObject) in return false}
 	var currentValue: AnyObject!
 	
 	init () {}
@@ -22,6 +25,9 @@ class Signal {
 	}
 	
 	func sendNext(object: AnyObject) {
+		
+		if filterClosure(object) {return}
+		
 		if	closure {
 			currentValue = closure(object)
 		} else {
@@ -32,9 +38,17 @@ class Signal {
 		}
 	}
 	
-	func subscribeNext(_closure: SignalClosure) -> Signal {
+	func next(_closure: SignalClosure) -> Signal {
 		let newSignal = Signal()
 		newSignal.closure = _closure
+		subscribers.append(newSignal)
+		return newSignal
+	}
+	
+	func filter(_filter: BoolClosure) -> Signal {
+		let newSignal = Signal()
+		newSignal.closure = {return $0}
+		newSignal.filterClosure = _filter
 		subscribers.append(newSignal)
 		return newSignal
 	}
